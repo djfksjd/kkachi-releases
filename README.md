@@ -33,23 +33,25 @@ KKACHI는 자료 수집, AI 초안 작성, 변경 검토, 문서 저장을 하�
 
 자료와 문서 이력은 로컬에서 관리하고, AI의 제안은 검토와 승인 과정을 거쳐 반영합니다. 작성 결과뿐 아니라 **어떤 자료를 사용했고, 무엇을 승인했으며, 어느 버전으로 제출했는지**를 함께 관리하는 것이 핵심입니다.
 
-> **현재 상태: 공개 베타 0.1.0-beta.1** · Apple Silicon용 설치 파일을 제공합니다. Apple Developer 서명·공증은 아직 없으며, macOS 첫 실행 시 보안 확인이 필요할 수 있습니다. 정식 배포 검증이 완료된 버전은 아닙니다.
+> **현재 상태: 공개 베타 0.1.0-beta.1** · macOS Apple Silicon·Intel과 Windows x64 설치 파일을 제공합니다. Apple Developer 서명·공증과 Windows 배포자 서명은 아직 없으며, 첫 실행 시 운영체제의 보안 확인이 필요할 수 있습니다. 정식 배포 검증이 완료된 버전은 아닙니다.
 
 ## 설치
 
 **[KKACHI 다운로드 및 사용 안내](https://github.com/djfksjd/kkachi-releases)** · [릴리스 목록](https://github.com/djfksjd/kkachi-releases/releases) · [Homebrew 배포 저장소](https://github.com/djfksjd/homebrew-kkachi)
 
-| 플랫폼                | 설치 형식         | 현재 상태                      |
-| :-------------------- | :---------------- | :----------------------------- |
+| 플랫폼                | 설치 형식            | 현재 상태              |
+| :-------------------- | :------------------- | :--------------------- |
 | macOS · Apple Silicon | DMG · ZIP · Homebrew | 0.1.0-beta.1 베타 제공 |
-| macOS · Intel         | DMG · Homebrew    | 서명·공증 및 출력 검증 준비 중 |
-| Windows · x64         | EXE 설치 프로그램 | 서명 및 출력 검증 준비 중      |
+| macOS · Intel         | DMG · ZIP · Homebrew | 0.1.0-beta.1 베타 제공 |
+| Windows · x64         | EXE 설치 프로그램    | 0.1.0-beta.1 베타 제공 |
 
-[Apple Silicon 베타 다운로드](https://github.com/djfksjd/kkachi-releases/releases/tag/v0.1.0-beta.1) 또는 아래 명령으로 설치하세요.
+[Mac·Windows 베타 다운로드](https://github.com/djfksjd/kkachi-releases/releases/tag/v0.1.0-beta.1) 또는 아래 명령으로 설치하세요.
 
 ```bash
 brew install --cask djfksjd/kkachi/kkachi
 ```
+
+Homebrew는 Apple Silicon과 Intel에 맞는 파일을 자동으로 선택합니다. Windows는 릴리스의 `KKACHI-0.1.0-beta.1-windows-x64-setup.exe`를 사용하세요. Windows 11 Smart App Control이나 회사 보안 정책은 미서명 앱을 차단할 수 있습니다.
 
 **베타 제한:** 앱 내부 자동 업데이트를 제공하지 않습니다. KKACHI 자체 관리형 AI와 API 키(BYOK) 방식은 현재 비활성화되어 있고, HWPX 외부 제출용 검증은 미완료입니다. 로컬 내부 검토와 외부 전달의 검증 경계는 유지합니다. **Claude·Codex(ChatGPT)·Gemini 구독 계정 연결 경로는 별도로 지원하며**, 실제 실행에는 해당 계정 연결과 권한이 필요합니다.
 
@@ -116,7 +118,6 @@ brew install --cask djfksjd/kkachi/kkachi
 - **실행 경계 분리** — 비공개 시스템 프롬프트와 실행 지침은 서버 배포 자산입니다. 데스크톱에는 서명된 공개 메타데이터와 구조화된 결과만 전달합니다. 공개 웹사이트와 관리형 AI 실행 서버도 별도 경계로 운영합니다.
 
 소스 코드와 비공개 에이전트 실행 지침은 이 배포 저장소에 포함하지 않습니다.
-
 
 ## 문의와 변경 기록
 
